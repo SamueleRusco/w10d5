@@ -18,15 +18,14 @@ const HomePage = () => {
                 setSearchQuery(e.target[0].value);
               }}
             >
-              <Form.Label>Scrivi il nome della tua citta:</Form.Label>
-              <Form.Group>
+              <Form.Group className="d-flex m-5">
                 <Form.Control
                   type="text"
-                  placeholder="Search here"
-
-                  //   onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Scrivi il nome della tua citta"
                 />
-                <Button type="submit">clickHere</Button>
+                <Button className="button" type="submit">
+                  clickHere
+                </Button>
               </Form.Group>
             </Form>
             {clima.main && <ClimaCard clima={clima} />}
