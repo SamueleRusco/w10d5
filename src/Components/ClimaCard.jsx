@@ -1,21 +1,46 @@
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Container } from "react-bootstrap";
 
 const ClimaCard = (clima) => {
   const climaProps = clima.clima;
+  const mainTemp = climaProps.main.temp;
+
   return (
     <>
       <Card>
         <Card.Body>
-          <Card.Title>{climaProps.name}</Card.Title>
+          <Card.Title>
+            <i class="fa-solid fa-temperature-three-quarters"></i>
+            {climaProps.name}
+          </Card.Title>
           <Card.Text>
-            <h1>temperatura attuale:{climaProps.main.temp}°C</h1>
-            <h3>temperatura percepita:{climaProps.main.feels_like}°C</h3>
+            <div>
+              <h1 className="mainTemp">{Math.floor(mainTemp)}°C</h1>
+            </div>
+            <div>
+              {mainTemp > 18 ? (
+                <i class="fa-solid fa-temperature-sun"></i>
+              ) : (
+                <i class="fa-solid fa-temperature-snow"></i>
+              )}
+            </div>
             <p>
               <span>
-                <div>temperatura massima:{climaProps.main.temp_max}°C</div>
+                <div>
+                  {Math.floor(climaProps.main.temp_max)}°C
+                  <span>
+                    {" "}
+                    <i class="fa-solid fa-temperature-arrow-up"></i>
+                  </span>
+                </div>
               </span>
               <span>
-                <div>temperatura minima:{climaProps.main.temp_min}°C</div>
+                <div>
+                  {Math.floor(climaProps.main.temp_min)}°C
+                  <span>
+                    {" "}
+                    <i class="fa-solid fa-temperature-arrow-down"></i>
+                  </span>
+                </div>
               </span>
             </p>
           </Card.Text>
