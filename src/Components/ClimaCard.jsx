@@ -44,7 +44,6 @@ const ClimaCard = (clima) => {
               </span>
             </p>
           </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
         </Card.Body>
       </Card>
     </>
