@@ -84,3 +84,19 @@ body {
     height: 100px;
     overflow: hidden;
 }
+
+.search-box {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mainTemp {
+    font-size: 100px;
+    font-weight: 300;
+}
+
+.iconTemp {
+    font-size: 50px;
+
+}
